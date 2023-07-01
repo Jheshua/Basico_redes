@@ -1,0 +1,8 @@
+Enable
+config t 
+enable password CONTRASEÑA (opcion1)
+enable secret CONTRASEÑA1 (opcion2 la mas segura ya que es encriptada)
+
+ctrl+z
+
+sh run (para ver configuracion) 

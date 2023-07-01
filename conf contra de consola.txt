@@ -1,0 +1,5 @@
+enable 
+config t
+username USERCONSOLE privilege 15 secret CLAVECONSOLE
+line console 0 
+login local
