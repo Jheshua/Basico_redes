@@ -1,0 +1,49 @@
+Primero debemos tener una IP en nuestro switch 
+enable
+config t
+int vlan 1
+ip address 10.0.0.1 255.255.255.0
+sh ip int brief (para ver la ip)
+no shutdown 
+
+
+Segundo debemos tener configurado el PC con ip y mascarara
+y podemos enviar ping desde cmd al switch con 10.0.0.1
+
+
+tercero le colocamos una pass al switch 
+
+conf t
+line vty 0 15 
+password CONTRASEÑA
+login
+exit
+service password-encryption
+enable secret CONTRASEÑA
+
+podemos configurar un usuario aparte
+
+username NOMBRE privilege 15 secret CONTRASEÑA
+line vty 0 15
+login local 
+
+
+(desde el PC)telnet 10.0.0.1
+NOMBRE
+CONTRASEÑA
+sh run
+
+ahora deberiamos de tener acceso al switch desde el pc 
+
+
+
+
+
+--------
+enable
+config t
+username USERVTY privilege 15 secret CLAVEVTY
+line vty 0 15
+login local
+
+
